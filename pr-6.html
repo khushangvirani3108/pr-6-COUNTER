@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        *{
+            margin: 0;
+        }
+        .counter-app {
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .counter-value {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .btn {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            font-size: 24px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .counter-app .minus{
+            margin-top: 100px;
+            background-color: green;
+            padding: 0 30px;
+            color: white;
+            font-size: 30px;
+        }
+        .counter-app .reset{
+            background-color: green;
+            padding: 0 15px;
+            color: white;
+            font-size: 20px;
+        }
+        .counter-app .plus{
+            background-color: green;
+            margin-bottom: 20px;
+            padding: 0 30px;
+            color: white;
+            font-size: 30px;
+        }
+        .counter-app .count-value{
+            font-size: 30px;
+        }
+    </style>
+    <div class="counter-app">
+        <h1>Counter App</h1>
+        <button class="minus">-</button>
+        <div class="count-value">0</div>
+        <button class="plus">+</button>
+        <button class="reset">Reset</button>
+    </div>
+
+    <script>
+        let minus = document.querySelector('.minus');
+        let plus = document.querySelector('.plus');
+        let reset = document.querySelector('.reset');
+        let counterValue = document.querySelector('.count-value');
+
+        let counter = 0;
+
+        minus.addEventListener('click', () => {
+            counter--;
+            counterValue.innerHTML = counter;
+        });
+
+        plus.addEventListener('click', () => {
+            counter++;
+            counterValue.innerHTML = counter;
+        });
+
+        reset.addEventListener('click', () => {
+            counter = 0;
+            counterValue.innerHTML = counter;
+        });
+    </script>
+</body>
+
+</html>
